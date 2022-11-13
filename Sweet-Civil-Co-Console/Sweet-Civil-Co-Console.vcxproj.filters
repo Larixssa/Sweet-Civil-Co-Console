@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\sys">
+      <UniqueIdentifier>{28cefa90-c491-409f-bb44-6cfa746326af}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\command_utils">
+      <UniqueIdentifier>{925ea68b-5ed2-4fe5-aa17-5689bc2a271f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\display">
+      <UniqueIdentifier>{d1659fbe-bafc-47fb-82f4-f84dac02a747}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\init">
+      <UniqueIdentifier>{e280b391-4088-4f6d-be1c-f11457917d57}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\parser">
+      <UniqueIdentifier>{6405481a-179a-4b8e-9e65-bee814ef5401}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="sweet_console.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="command_utils\command.cpp">
+      <Filter>Header Files\command_utils</Filter>
+    </ClCompile>
+    <ClCompile Include="parser\command_parser.cpp">
+      <Filter>Header Files\parser</Filter>
+    </ClCompile>
+    <ClCompile Include="sys_utils\sys_exec.cpp">
+      <Filter>Header Files\sys</Filter>
+    </ClCompile>
+    <ClCompile Include="init\init_client.cpp">
+      <Filter>Header Files\init</Filter>
+    </ClCompile>
+    <ClCompile Include="display\title.cpp">
+      <Filter>Header Files\display</Filter>
+    </ClCompile>
+    <ClCompile Include="display\linebar.cpp">
+      <Filter>Header Files\display</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="command_utils\command.h">
+      <Filter>Header Files\command_utils</Filter>
+    </ClInclude>
+    <ClInclude Include="parser\command_parser.h">
+      <Filter>Header Files\parser</Filter>
+    </ClInclude>
+    <ClInclude Include="sys_utils\sys_exec.h">
+      <Filter>Header Files\sys</Filter>
+    </ClInclude>
+    <ClInclude Include="init\init_client.h">
+      <Filter>Header Files\init</Filter>
+    </ClInclude>
+    <ClInclude Include="display\title.h">
+      <Filter>Header Files\display</Filter>
+    </ClInclude>
+    <ClInclude Include="display\linebar.h">
+      <Filter>Header Files\display</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
