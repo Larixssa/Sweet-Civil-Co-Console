@@ -1,0 +1,12 @@
+Building document for running and installing the prerequisites.
+
+
+---- Installation ----
+
+> Install Visual Studio.
+> Install "Desktop Development with C++" in workloads.
+
+
+---- Running ----
+
+Open the solution, press CTRL + SHIFT + B, then CTRL + F5
