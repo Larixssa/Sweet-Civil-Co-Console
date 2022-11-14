@@ -1,6 +1,6 @@
 #include "Title.h"
 #include "LineBar.h"
-#include "../client/Info.h"
+#include "../client/ClientInfo.h"
 
 #include<string>
 #include<iostream>

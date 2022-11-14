@@ -84,7 +84,7 @@ void Command_Parser::parse_command(std::string prs_cmd)
 		}
 		
 		if (!Command::check_command(prs_cmd, "exit")) {
-			CLIENT_INIT::init_client(
+			INIT::init_client(
 				DEFAULT_REINIT_VAL, 
 				DEFAULT_REINIT_VAL, 
 				DEFAULT_REINIT_VAL

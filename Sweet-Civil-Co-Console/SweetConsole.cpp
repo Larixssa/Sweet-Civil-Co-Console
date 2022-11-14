@@ -2,6 +2,6 @@
 
 #include <iostream>
 #include <string>
-#include "init/init_client.h"
+#include "init/Init.h"
 
-int main(int argc, char** argv) { CLIENT_INIT::init_client(true, true, true); return 0; }
+int main(int argc, char** argv) { INIT::init_client(true, true, true); return 0; }

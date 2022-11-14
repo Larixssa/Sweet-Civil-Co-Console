@@ -30,7 +30,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="sweet_console.cpp">
+    <ClCompile Include="SweetConsole.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="command_utils\Command.cpp">

@@ -180,7 +180,7 @@
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">CompileAsHeaderUnit</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">CompileAsHeaderUnit</CompileAs>
     </ClCompile>
-    <ClCompile Include="sweet_console.cpp" />
+    <ClCompile Include="SweetConsole.cpp" />
     <ClCompile Include="command_utils\Flag.cpp">
       <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ScanSourceForModuleDependencies>
       <TranslateIncludes Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</TranslateIncludes>

@@ -25,6 +25,6 @@ void INIT::init_client(bool show_title, bool clear_screen, bool do_load)
 
 	if (!cmdio.empty()) {
 		Command_Parser::command_handler(cmdio);
-	} else { CLIENT_INIT::init_client(DEFAULT_REINIT_VAL, DEFAULT_REINIT_VAL, DEFAULT_REINIT_VAL); }
+	} else { INIT::init_client(DEFAULT_REINIT_VAL, DEFAULT_REINIT_VAL, DEFAULT_REINIT_VAL); }
 
 }
