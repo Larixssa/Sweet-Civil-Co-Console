@@ -4,8 +4,8 @@
 #include "../sys_utils/SysExec.h"
 #include "../init/Init.h"
 #include "../client/ClientInfo.h"
+#include "../scclib/Swtio.h"
 
-#include<iostream>
 #include<string>
 
 void Command_Parser::command_help_list()
@@ -26,13 +26,13 @@ void Command_Parser::command_help_list()
 		"Clear the screen."
 	};
 
-	std::cout << "\n-- Command List --\n\n";
+	Swtio::cput("\n-- Command List --\n\n");
 
 	for (int i = 0; i < default_arr_size; i++) {
-		std::cout << Command::create_command(command_table[i], command_descriptions[i]) << "\n";
+		Swtio::cput(Command::create_command(command_table[i], command_descriptions[i]) + "\n");
 	}
 
-	std::cout << "\n";
+	Swtio::cput("\n");
 }
 
 void Command_Parser::command_handler(std::string cmd_to_parse)

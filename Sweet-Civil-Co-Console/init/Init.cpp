@@ -5,6 +5,8 @@
 #include "../command_utils/Command.h"
 #include "../display/Title.h"
 #include "../sys_utils/SysExec.h"
+#include "../scclib/Strutils.h"
+#include "../scclib/Swtio.h"
 
 #include<iostream>
 #include<sstream>

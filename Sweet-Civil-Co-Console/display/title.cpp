@@ -1,9 +1,10 @@
 #include "Title.h"
 #include "LineBar.h"
 #include "../client/ClientInfo.h"
+#include "../scclib/Swtio.h"
+#include "../scclib/Strutils.h"
 
 #include<string>
-#include<iostream>
 
 
 std::string Title::create_title(std::string title_str, std::string version, bool shows_version)
@@ -22,5 +23,5 @@ void Title::display_title()
 {
 	std::string title_content = Title::create_title(ClientInfo::CLIENT_NAME, ClientInfo::CLIENT_VERSION);
 	std::string linebar = LineBar::create_linebar("-", 58);
-	std::cout << title_content + "\n\n" + linebar;
+	Swtio::cput(title_content + "\n\n" + linebar);
 }

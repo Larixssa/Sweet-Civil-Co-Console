@@ -63,6 +63,9 @@
     <ClCompile Include="sys_utils\Platform.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="scclib\Swtio.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="command_utils\Command.h">
@@ -93,6 +96,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="sys_utils\Platform.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="scclib\Swtio.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
