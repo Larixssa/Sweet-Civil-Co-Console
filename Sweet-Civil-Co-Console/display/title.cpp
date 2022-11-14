@@ -1,5 +1,6 @@
 #include "title.h"
 #include "linebar.h"
+#include "../client/info.h"
 
 #include<string>
 #include<iostream>
@@ -19,7 +20,7 @@ std::string Title::create_title(std::string title_str, std::string version, bool
 
 void Title::display_title()
 {
-	std::string title_content = Title::create_title("Sweet Civil Corporation. [Console]", "[0.0.1]");
-	std::string linebar = LineBar::create_linebar("-", 65);
+	std::string title_content = Title::create_title(ClientInfo::CLIENT_NAME, ClientInfo::CLIENT_VERSION);
+	std::string linebar = LineBar::create_linebar("-", 58);
 	std::cout << title_content + "\n\n" + linebar;
 }

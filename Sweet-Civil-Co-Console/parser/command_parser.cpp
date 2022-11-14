@@ -1,24 +1,28 @@
 #include "../parser/command_parser.h"
 #include "../command_utils/command.h"
+#include "../command_utils/flag.h"
 #include "../sys_utils/sys_exec.h"
 #include "../init/init_client.h"
+#include "../client/info.h"
 
 #include<iostream>
 #include<string>
 
 void Command_Parser::command_help_list()
 {
-	const int default_arr_size = 3;
+	const int default_arr_size = 4;
 
 	std::string command_table[default_arr_size] = {
 		"help",
 		"exit",
+		"version",
 		"clear"
 	};
 
 	std::string command_descriptions[default_arr_size] = {
 		"Show information and list for commands.",
 		"Exit the console.",
+		"Get the version of the console.",
 		"Clear the screen."
 	};
 
@@ -33,12 +37,13 @@ void Command_Parser::command_help_list()
 
 void Command_Parser::command_handler(std::string cmd_to_parse)
 {
-	const int default_cmd_table_size = 3;
+	const int default_cmd_table_size = 4;
 
 	std::string local_cmd_table[default_cmd_table_size] = {};
 
 	Command::add_command("help", local_cmd_table);
 	Command::add_command("clear", local_cmd_table);
+	Command::add_command("version", local_cmd_table);
 	Command::add_command("exit", local_cmd_table);
 
 	bool do_parse = false;
@@ -66,6 +71,16 @@ void Command_Parser::parse_command(std::string prs_cmd)
 
 		if (Command::check_command(prs_cmd, "clear")) {
 			System_Exec::clear_screen();
+		}
+
+		if (Command::check_command_starts_with(prs_cmd, "version")) {
+			if (Flag::check_flag(prs_cmd, "--console")) {
+				ClientInfo::get_client_info_of("main");
+			} else if (Flag::check_flag(prs_cmd, "--release")) {
+				ClientInfo::get_client_info_of("release");
+			} else {
+				ClientInfo::get_client_info_of();
+			}
 		}
 		
 		if (!Command::check_command(prs_cmd, "exit")) {

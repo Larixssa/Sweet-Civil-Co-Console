@@ -1,4 +1,5 @@
 #include "command.h"
+#include "../scclib/stdstrutils.h"
 
 #include<string>
 
@@ -29,7 +30,14 @@ std::string* Command::add_command(std::string name, std::string arr[])
 bool Command::check_command(std::string base_cmd, std::string p_cmd)
 {
 	bool parsed = false;
-	if (base_cmd.compare(p_cmd) == 0) {
+	if (base_cmd.compare(p_cmd) == 0) { parsed = true; }
+	return parsed;
+}
+
+bool Command::check_command_starts_with(std::string base_cmd, std::string p_cmd_starts)
+{
+	bool parsed = false;
+	if (STRING_UTILS::starts_with(base_cmd, p_cmd_starts)) {
 		parsed = true;
 	}
 	return parsed;
