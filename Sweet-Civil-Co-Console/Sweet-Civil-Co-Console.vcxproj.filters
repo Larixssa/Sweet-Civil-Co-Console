@@ -33,60 +33,66 @@
     <ClCompile Include="sweet_console.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="command_utils\command.cpp">
+    <ClCompile Include="command_utils\Command.cpp">
       <Filter>Header Files\command_utils</Filter>
     </ClCompile>
-    <ClCompile Include="parser\command_parser.cpp">
+    <ClCompile Include="parser\CommandParser.cpp">
       <Filter>Header Files\parser</Filter>
     </ClCompile>
-    <ClCompile Include="sys_utils\sys_exec.cpp">
+    <ClCompile Include="sys_utils\SysExec.cpp">
       <Filter>Header Files\sys</Filter>
     </ClCompile>
-    <ClCompile Include="init\init_client.cpp">
+    <ClCompile Include="init\Init.cpp">
       <Filter>Header Files\init</Filter>
     </ClCompile>
-    <ClCompile Include="display\title.cpp">
+    <ClCompile Include="display\Title.cpp">
       <Filter>Header Files\display</Filter>
     </ClCompile>
-    <ClCompile Include="display\linebar.cpp">
+    <ClCompile Include="display\LineBar.cpp">
       <Filter>Header Files\display</Filter>
     </ClCompile>
-    <ClCompile Include="command_utils\flag.cpp">
+    <ClCompile Include="command_utils\Flag.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="client\info.cpp">
+    <ClCompile Include="client\ClientInfo.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="scclib\stdstrutils.cpp">
+    <ClCompile Include="scclib\Strutils.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sys_utils\Platform.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="command_utils\command.h">
+    <ClInclude Include="command_utils\Command.h">
       <Filter>Header Files\command_utils</Filter>
     </ClInclude>
-    <ClInclude Include="parser\command_parser.h">
+    <ClInclude Include="parser\CommandParser.h">
       <Filter>Header Files\parser</Filter>
     </ClInclude>
-    <ClInclude Include="sys_utils\sys_exec.h">
+    <ClInclude Include="sys_utils\SysExec.h">
       <Filter>Header Files\sys</Filter>
     </ClInclude>
-    <ClInclude Include="init\init_client.h">
+    <ClInclude Include="init\Init.h">
       <Filter>Header Files\init</Filter>
     </ClInclude>
-    <ClInclude Include="display\title.h">
+    <ClInclude Include="display\Title.h">
       <Filter>Header Files\display</Filter>
     </ClInclude>
-    <ClInclude Include="display\linebar.h">
+    <ClInclude Include="display\LineBar.h">
       <Filter>Header Files\display</Filter>
     </ClInclude>
-    <ClInclude Include="command_utils\flag.h">
+    <ClInclude Include="command_utils\Flag.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="client\info.h">
+    <ClInclude Include="client\ClientInfo.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="scclib\stdstrutils.h">
+    <ClInclude Include="scclib\Strutils.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sys_utils\Platform.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

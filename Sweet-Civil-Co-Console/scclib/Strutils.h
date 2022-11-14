@@ -1,5 +1,5 @@
-#ifndef STDSTRUTILS_H
-#define STDSTRUTILS_H
+#ifndef STRUTILS_H
+#define STRUTILS_H
 
 #include<string>
 

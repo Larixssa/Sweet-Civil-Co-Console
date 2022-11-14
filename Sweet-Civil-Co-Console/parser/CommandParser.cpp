@@ -1,9 +1,9 @@
-#include "../parser/command_parser.h"
-#include "../command_utils/command.h"
-#include "../command_utils/flag.h"
-#include "../sys_utils/sys_exec.h"
-#include "../init/init_client.h"
-#include "../client/info.h"
+#include "CommandParser.h"
+#include "../command_utils/Command.h"
+#include "../command_utils/Flag.h"
+#include "../sys_utils/SysExec.h"
+#include "../init/Init.h"
+#include "../client/ClientInfo.h"
 
 #include<iostream>
 #include<string>

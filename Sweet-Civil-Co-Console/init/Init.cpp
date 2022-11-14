@@ -1,14 +1,16 @@
-#include "init_client.h"
-#include "../parser/command_parser.h"
-#include "../command_utils/command.h"
-#include "../display/title.h"
-#include "../sys_utils/sys_exec.h"
+// This is where code is initialized.
+
+#include "Init.h"
+#include "../parser/CommandParser.h"
+#include "../command_utils/Command.h"
+#include "../display/Title.h"
+#include "../sys_utils/SysExec.h"
 
 #include<iostream>
 #include<sstream>
 #include<string>
 
-void CLIENT_INIT::init_client(bool show_title, bool clear_screen, bool do_load)
+void INIT::init_client(bool show_title, bool clear_screen, bool do_load)
 {
 
 	std::string cmdio;

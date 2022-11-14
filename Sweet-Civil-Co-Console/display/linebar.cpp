@@ -1,4 +1,4 @@
-#include "linebar.h"
+#include "LineBar.h"
 
 #include<string>
 

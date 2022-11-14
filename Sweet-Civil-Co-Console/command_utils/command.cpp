@@ -1,5 +1,5 @@
-#include "command.h"
-#include "../scclib/stdstrutils.h"
+#include "Command.h"
+#include "../scclib/Strutils.h"
 
 #include<string>
 

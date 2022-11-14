@@ -1,4 +1,4 @@
-#include "info.h"
+#include "ClientInfo.h"
 
 #include<iostream>
 

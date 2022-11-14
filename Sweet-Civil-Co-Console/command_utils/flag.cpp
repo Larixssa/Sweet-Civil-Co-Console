@@ -1,4 +1,4 @@
-#include "flag.h"
+#include "Flag.h"
 
 #include<string>
 #include<iostream>

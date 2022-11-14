@@ -3,8 +3,8 @@
 * Standard System and Client executions.
 */
 
-#ifndef SYS_EXEC_H
-#define SYS_EXEC_H
+#ifndef SYSEXEC_H
+#define SYSEXEC_H
 
 #include<string>
 
