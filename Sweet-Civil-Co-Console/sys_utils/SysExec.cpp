@@ -1,23 +1,32 @@
 #include "SysExec.h"
+#include "Platform.h"
 
 #include<string>
 
-void System_Exec::exec_command(std::string exec_cmd)
+/// <summary>
+/// Legacy Command Execution function.
+/// </summary>
+/// <param name="sys_cmd"></param>
+void System_Exec::legacy_exec_command(std::string sys_cmd)
 {
-	if (!exec_cmd.empty())
+	if (!sys_cmd.empty())
 	{
 		#ifdef __linux__
-		system(exec_cmd);
+		const char* lcommand = sys_cmd.c_str();
+		system(lcommand);
 		#elif _WIN32
 		std::string cmd_str = "powershell ";
-		cmd_str = cmd_str + " -command " + exec_cmd;
+		cmd_str = cmd_str + " -command " + sys_cmd;
 		const char* command = cmd_str.c_str();
 		system(command);
 		#endif
 	}
 }
 
-void System_Exec::clear_screen()
+/// <summary>
+/// Legacy clear screen.
+/// </summary>
+void System_Exec::legacy_clear_screen()
 {
 	#ifdef __linux__
 	system("clear");
@@ -26,11 +35,25 @@ void System_Exec::clear_screen()
 	#endif
 }
 
-void System_Exec::exit_client()
-{
-	#if __linux__
-	system("quit");
-	#elif _WIN32
-	exit(0);
-	#endif
+void System_Exec::exit_client() { exit(0); }
+
+void System_Exec::exec_command(std::string sys_cmd) {
+	if (!sys_cmd.empty()) {
+		if (Platform::get_platform() == "Linux" or Platform::get_platform() == "Default") {
+			const char* lcommand = sys_cmd.c_str();
+			system(lcommand);
+		} else if (Platform::get_platform() == "Windows") {
+			std::string cmd_str = "powershell ";
+			cmd_str = cmd_str + " -command " + sys_cmd;
+			const char* command = cmd_str.c_str();
+			system(command);
+		}
+	}
+}
+
+void System_Exec::clear_screen() {
+	if (Platform::get_platform() == "Linux" or Platform::get_platform() == "Default")
+		{ system("clear"); } 
+	else if (Platform::get_platform() == "Windows")
+		{ system("cls"); }
 }

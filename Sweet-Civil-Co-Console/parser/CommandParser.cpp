@@ -4,18 +4,20 @@
 #include "../sys_utils/SysExec.h"
 #include "../init/Init.h"
 #include "../client/ClientInfo.h"
+#include "../client/GitInfo.h"
 #include "../scclib/Swtio.h"
 
 #include<string>
 
 void Command_Parser::command_help_list()
 {
-	const int default_arr_size = 4;
+	const int default_arr_size = 5;
 
 	std::string command_table[default_arr_size] = {
 		"help",
 		"exit",
 		"version",
+		"git",
 		"clear"
 	};
 
@@ -23,6 +25,7 @@ void Command_Parser::command_help_list()
 		"Show information and list for commands.",
 		"Exit the console.",
 		"Get the version of the console.",
+		"Output the repository info and link.",
 		"Clear the screen."
 	};
 
@@ -37,14 +40,12 @@ void Command_Parser::command_help_list()
 
 void Command_Parser::command_handler(std::string cmd_to_parse)
 {
-	const int default_cmd_table_size = 4;
+	const int default_cmd_table_size = 5;
 
-	std::string local_cmd_table[default_cmd_table_size] = {};
-
-	Command::add_command("help", local_cmd_table);
-	Command::add_command("clear", local_cmd_table);
-	Command::add_command("version", local_cmd_table);
-	Command::add_command("exit", local_cmd_table);
+	std::string local_cmd_table[default_cmd_table_size] = {
+		"help", "clear", "version",
+		"git", "exit"
+	};
 
 	bool do_parse = false;
 
@@ -81,6 +82,10 @@ void Command_Parser::parse_command(std::string prs_cmd)
 			} else {
 				ClientInfo::get_client_info_of();
 			}
+		}
+
+		if (Command::check_command(prs_cmd, "git")) {
+			GitInfo::out_repo_info();
 		}
 		
 		if (!Command::check_command(prs_cmd, "exit")) {

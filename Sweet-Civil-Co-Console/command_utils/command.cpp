@@ -17,14 +17,6 @@ std::string Command::create_command(std::string name, std::string description)
 	return full_string;
 }
 
-std::string* Command::add_command(std::string name, std::string arr[])
-{
-	if (!name.empty()) {
-		arr->append(name);
-	}
-	return arr;
-}
-
 bool Command::check_command(std::string base_cmd, std::string p_cmd)
 {
 	bool parsed = false;
