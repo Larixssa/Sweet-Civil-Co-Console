@@ -36,7 +36,7 @@ void GitInfo::out_repo_info() {
 		"> @Equinoxtic (Original Creator)\n" +
 		"> Made in C++\n\n" +
 		"; Larixssa <3\n\n" +
-		"Repository: " + GitInfo::get_repo_link();
+		"Repository: " + GitInfo::get_repo_link() + "\n\n";
 
 	Swtio::cput(std::string(full_script));
 }

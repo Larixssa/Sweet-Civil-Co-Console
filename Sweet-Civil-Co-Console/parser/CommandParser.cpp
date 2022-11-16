@@ -6,6 +6,8 @@
 #include "../client/ClientInfo.h"
 #include "../client/GitInfo.h"
 #include "../scclib/Swtio.h"
+#include "../scclib/Strutils.h"
+#include "../scclib/HttpLink.h"
 
 #include<string>
 
@@ -50,7 +52,7 @@ void Command_Parser::command_handler(std::string cmd_to_parse)
 	bool do_parse = false;
 
 	for (int i = 0; i < default_cmd_table_size; i++) {
-		if (cmd_to_parse.compare(local_cmd_table[i])) {
+		if (STRING_UTILS::cmpr(cmd_to_parse, local_cmd_table[i])) {
 			do_parse = true;
 		}
 	}
@@ -84,8 +86,14 @@ void Command_Parser::parse_command(std::string prs_cmd)
 			}
 		}
 
-		if (Command::check_command(prs_cmd, "git")) {
-			GitInfo::out_repo_info();
+		if (Command::check_command_starts_with(prs_cmd, "git")) {
+			if (Flag::check_flag(prs_cmd, "/open")) {
+				HttpLink::open_link("github.com/Larixssa/QyVern-PY");
+			} else if (Flag::check_flag(prs_cmd, "/link")) {
+				Swtio::cput(std::string("\nRepository Link: ") + HttpLink::get_link("github.com/Larixssa/QyVern-PY") + "\n\n");
+			} else {
+				GitInfo::out_repo_info();
+			}
 		}
 		
 		if (!Command::check_command(prs_cmd, "exit")) {

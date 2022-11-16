@@ -1,5 +1,6 @@
 #include "WarningHandler.h"
 #include "../scclib/Swtio.h"
+#include "../scclib/Strutils.h"
 
 #include<string>
 
@@ -10,11 +11,10 @@ void WarningHandler::warning_handler(std::string whtype, std::string whval)
 {
 	if (!whtype.empty() && !whval.empty())
 	{
-		if (whtype.compare(WarningHandler::DEFAULT_WARNING_TYPE) || whtype.compare("incomplete_cmd")) {
-			WarningHandler::throw_warning_incomplete_cmd(whval);
-		} else if (whtype.compare(WarningHandler::DEFAULT_WARNING_TYPE) || whtype.compare("empty_prompt")) {
-			WarningHandler::throw_warning_empty_prompt(whval);
-		}
+		if (STRING_UTILS::strcmpr(whtype, WarningHandler::DEFAULT_WARNING_MESSAGE)
+			|| STRING_UTILS::strcmpr(whtype, "incomplete_cmd")) { WarningHandler::throw_warning_incomplete_cmd(whval); } 
+		else if (STRING_UTILS::strcmpr(whtype, WarningHandler::DEFAULT_WARNING_MESSAGE)
+			|| STRING_UTILS::strcmpr(whtype, "empty_prompt")) { WarningHandler::throw_warning_empty_prompt(whval); }
 	}
 }
 

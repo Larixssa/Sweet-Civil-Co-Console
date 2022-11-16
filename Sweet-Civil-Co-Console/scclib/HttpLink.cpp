@@ -2,6 +2,7 @@
 #include "../sys_utils/Platform.h"
 #include "../sys_utils/SysExec.h"
 #include "../scclib/Swtio.h"
+#include "../scclib/Strutils.h"
 
 #include<string>
 
@@ -38,9 +39,9 @@ std::string HttpLink::www_init_link(std::string url) {
 
 std::string HttpLink::get_link(std::string parse_url, std::string protocol) {
 	std::string full_url;
-	if (protocol.compare("https")) { full_url = https_init_link(parse_url); }
-	else if (protocol.compare("http")) { full_url = http_init_link(parse_url); }
-	else if (protocol.compare("www")) { full_url = www_init_link(parse_url); }
+	if (STRING_UTILS::strcmpr(protocol, "https")) { full_url = https_init_link(parse_url); }
+	else if (STRING_UTILS::strcmpr(protocol, "http")) { full_url = http_init_link(parse_url); }
+	else if (STRING_UTILS::strcmpr(protocol, "www")) { full_url = www_init_link(parse_url); }
 	return full_url;
 }
 
@@ -53,10 +54,10 @@ void HttpLink::out_link(std::string link_url, std::string protocol) {
 
 void HttpLink::open_link(std::string link) {
 	if (!link.empty()) {
-		if (Platform::get_platform() == "Windows") {
-			System_Exec::exec_command("start " + link);
-		} else if (Platform::get_platform() == "Linux") {
-			System_Exec::exec_command("xdg-open " + link);
+		if (STRING_UTILS::strcmpr(Platform::get_platform(), "Windows")) {
+			System_Exec::exec_command("start " + get_link(link));
+		} else if (STRING_UTILS::strcmpr(Platform::get_platform(), "Windows")) {
+			System_Exec::exec_command("xdg-open " + get_link(link));
 		}
 	}
 }
