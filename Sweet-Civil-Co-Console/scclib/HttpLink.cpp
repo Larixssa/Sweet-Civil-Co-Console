@@ -53,11 +53,21 @@ void HttpLink::out_link(std::string link_url, std::string protocol) {
 }
 
 void HttpLink::open_link(std::string link) {
+	std::string command_prefix;
 	if (!link.empty()) {
-		if (STRING_UTILS::strcmpr(Platform::get_platform(), "Windows")) {
-			System_Exec::exec_command("start " + get_link(link));
-		} else if (STRING_UTILS::strcmpr(Platform::get_platform(), "Windows")) {
-			System_Exec::exec_command("xdg-open " + get_link(link));
+		if (Platform::check_platform("Windows")) {
+			if (!STRING_UTILS::starts_with(link, "https://")) {
+				command_prefix = "start " + get_link(link);
+			} else {
+				command_prefix = "start " + link;
+			}
+		} else if (Platform::check_platform("Linux")) {
+			if (!STRING_UTILS::starts_with(link, "https://")) {
+				command_prefix = "xdg-open " + get_link(link);
+			} else {
+				command_prefix = "xdg-open " + link;
+			}
 		}
+		System_Exec::exec_command(command_prefix);
 	}
 }

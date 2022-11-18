@@ -3,7 +3,7 @@
 #include "Init.h"
 #include "../parser/CommandParser.h"
 #include "../command_utils/Command.h"
-#include "../display/Title.h"
+#include "../display/ClientTitle.h"
 #include "../sys_utils/SysExec.h"
 #include "../scclib/Strutils.h"
 #include "../scclib/Swtio.h"
@@ -20,7 +20,7 @@ void INIT::init_client(bool show_title, bool clear_screen, bool do_load)
 	bool DEFAULT_REINIT_VAL = false;
 
 	//if (clear_screen) { System_Exec::clear_screen(); }
-	if (show_title) { Title::display_title(); std::cout << "\n\n"; }
+	if (show_title) { ClientTitle::display_client_title(); std::cout << "\n\n"; }
 	// if (show_cmd_list) { Command_Parser::command_help_list(); }
 
 	std::cout << "usr/console > "; std::getline(std::cin, cmdio);

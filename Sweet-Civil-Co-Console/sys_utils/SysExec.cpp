@@ -1,5 +1,6 @@
 #include "SysExec.h"
 #include "Platform.h"
+#include "../scclib/Strutils.h"
 
 #include<string>
 
@@ -39,10 +40,10 @@ void System_Exec::exit_client() { exit(0); }
 
 void System_Exec::exec_command(std::string sys_cmd) {
 	if (!sys_cmd.empty()) {
-		if (Platform::get_platform() == "Linux" or Platform::get_platform() == "Default") {
+		if (STRING_UTILS::strcmpr(Platform::get_platform(), "Linux") or STRING_UTILS::strcmpr(Platform::get_platform(), "Default")) {
 			const char* lcommand = sys_cmd.c_str();
 			system(lcommand);
-		} else if (Platform::get_platform() == "Windows") {
+		} else if (STRING_UTILS::strcmpr(Platform::get_platform(), "Windows")) {
 			std::string cmd_str = "powershell ";
 			cmd_str = cmd_str + " -command " + sys_cmd;
 			const char* command = cmd_str.c_str();
@@ -52,8 +53,8 @@ void System_Exec::exec_command(std::string sys_cmd) {
 }
 
 void System_Exec::clear_screen() {
-	if (Platform::get_platform() == "Linux" or Platform::get_platform() == "Default")
+	if (STRING_UTILS::strcmpr(Platform::get_platform(), "Linux") or STRING_UTILS::strcmpr(Platform::get_platform(), "Default"))
 		{ system("clear"); } 
-	else if (Platform::get_platform() == "Windows")
+	else if (STRING_UTILS::strcmpr(Platform::get_platform(), "Windows"))
 		{ system("cls"); }
 }

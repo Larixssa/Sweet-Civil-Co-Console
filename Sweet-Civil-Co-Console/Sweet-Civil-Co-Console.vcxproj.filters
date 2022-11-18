@@ -45,7 +45,7 @@
     <ClCompile Include="init\Init.cpp">
       <Filter>Header Files\init</Filter>
     </ClCompile>
-    <ClCompile Include="display\Title.cpp">
+    <ClCompile Include="display\GuiTitle.cpp">
       <Filter>Header Files\display</Filter>
     </ClCompile>
     <ClCompile Include="display\LineBar.cpp">
@@ -78,6 +78,18 @@
     <ClCompile Include="client\GitInfo.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="gui\QurlGui.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="display\ClientTitle.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="display\Prompt.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="templates\GuiClassTemplate.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="command_utils\Command.h">
@@ -92,7 +104,7 @@
     <ClInclude Include="init\Init.h">
       <Filter>Header Files\init</Filter>
     </ClInclude>
-    <ClInclude Include="display\Title.h">
+    <ClInclude Include="display\GuiTitle.h">
       <Filter>Header Files\display</Filter>
     </ClInclude>
     <ClInclude Include="display\LineBar.h">
@@ -123,6 +135,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="client\GitInfo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="gui\QurlGui.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="display\ClientTitle.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="display\Prompt.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

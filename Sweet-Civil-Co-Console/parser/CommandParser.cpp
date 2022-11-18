@@ -9,17 +9,20 @@
 #include "../scclib/Strutils.h"
 #include "../scclib/HttpLink.h"
 
+#include "../gui/QurlGui.h"
+
 #include<string>
 
 void Command_Parser::command_help_list()
 {
-	const int default_arr_size = 5;
+	const int default_arr_size = 6;
 
 	std::string command_table[default_arr_size] = {
 		"help",
 		"exit",
 		"version",
 		"git",
+		"qurl",
 		"clear"
 	};
 
@@ -28,6 +31,7 @@ void Command_Parser::command_help_list()
 		"Exit the console.",
 		"Get the version of the console.",
 		"Output the repository info and link.",
+		"Similar to the " + STRING_UTILS::quote_string("curl") + " Linux command",
 		"Clear the screen."
 	};
 
@@ -42,11 +46,11 @@ void Command_Parser::command_help_list()
 
 void Command_Parser::command_handler(std::string cmd_to_parse)
 {
-	const int default_cmd_table_size = 5;
+	const int default_cmd_table_size = 6;
 
 	std::string local_cmd_table[default_cmd_table_size] = {
 		"help", "clear", "version",
-		"git", "exit"
+		"git", "qurl", "exit"
 	};
 
 	bool do_parse = false;
@@ -94,6 +98,10 @@ void Command_Parser::parse_command(std::string prs_cmd)
 			} else {
 				GitInfo::out_repo_info();
 			}
+		}
+
+		if (Command::check_command_starts_with(prs_cmd, "qurl")) {
+			QurlGui::create_qurl_gui();
 		}
 		
 		if (!Command::check_command(prs_cmd, "exit")) {
