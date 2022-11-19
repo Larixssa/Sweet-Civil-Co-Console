@@ -19,8 +19,14 @@ void ErrorHandler::throw_handler(std::string thtype, std::string thval)
 
 void ErrorHandler::throw_empty_error(std::string kw) {
 	if (!kw.empty()) { Swtio::cput(
-		"[" + ErrorHandler::DEFAULT_ERROR_STRING + "] : String > " + STRING_UTILS::quote_string(kw) + " is empty."
-	); }
+		"\n[" + ErrorHandler::DEFAULT_ERROR_STRING + "] : String > " + STRING_UTILS::quote_string(kw) + " is empty."
+	); } Swtio::cnl(); Swtio::cnl();
+}
+
+void ErrorHandler::throw_cmd_doesnt_exists(std::string cval) {
+	if (!cval.empty()) { Swtio::cput(
+		"\n[" + ErrorHandler::DEFAULT_ERROR_STRING + "]: Command > " + STRING_UTILS::quote_string(cval) + " does not exist."
+	); } Swtio::cnl(); Swtio::cnl();
 }
 
 void ErrorHandler::throw_runtime_error(std::string vval) {
@@ -33,5 +39,5 @@ void ErrorHandler::throw_runtime_error(std::string vval) {
 			std::string("\n---- Console cannot be started. ----\n") +
 			"\n- Try to install / add the \"config\" directory.\n"
 			"- Read: Docs > Build.txt, to learn more."
-		); }
+		); } Swtio::cnl(); Swtio::cnl();
 }

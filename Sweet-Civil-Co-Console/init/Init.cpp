@@ -19,7 +19,7 @@ void INIT::init_client(bool show_title, bool clear_screen, bool do_load)
 
 	bool DEFAULT_REINIT_VAL = false;
 
-	//if (clear_screen) { System_Exec::clear_screen(); }
+	if (clear_screen) { System_Exec::clear_screen(); }
 	if (show_title) { ClientTitle::display_client_title(); std::cout << "\n\n"; }
 	// if (show_cmd_list) { Command_Parser::command_help_list(); }
 

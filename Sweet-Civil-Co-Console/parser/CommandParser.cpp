@@ -8,6 +8,7 @@
 #include "../scclib/Swtio.h"
 #include "../scclib/Strutils.h"
 #include "../scclib/HttpLink.h"
+#include "../handlers/ErrorHandler.h"
 
 #include "../gui/QurlGui.h"
 
@@ -56,12 +57,16 @@ void Command_Parser::command_handler(std::string cmd_to_parse)
 	bool do_parse = false;
 
 	for (int i = 0; i < default_cmd_table_size; i++) {
-		if (STRING_UTILS::cmpr(cmd_to_parse, local_cmd_table[i])) {
+		if (STRING_UTILS::strcmpr(cmd_to_parse, local_cmd_table[i]) || STRING_UTILS::starts_with(cmd_to_parse, local_cmd_table[i])) {
 			do_parse = true;
 		}
 	}
 	
-	if (do_parse) { Command_Parser::parse_command(cmd_to_parse); }
+	if (do_parse) {
+		Command_Parser::parse_command(cmd_to_parse);
+	} else {
+		ErrorHandler::throw_cmd_doesnt_exists(cmd_to_parse); INIT::init_client(false, false, false);
+	}
 }
 
 void Command_Parser::parse_command(std::string prs_cmd)

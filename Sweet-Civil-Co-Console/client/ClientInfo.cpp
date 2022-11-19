@@ -1,4 +1,5 @@
 #include "ClientInfo.h"
+#include "../scclib/Strutils.h"
 #include "../scclib/Swtio.h"
 
 std::string ClientInfo::CLIENT_NAME = "Sweet Civil Corporation. [Console]";
@@ -27,11 +28,11 @@ void ClientInfo::get_client_info_of(std::string client_info)
 {
 	if (!client_info.empty())
 	{
-		if (client_info.compare("main") == 0 || client_info.compare("console") == 0) {
+		if (STRING_UTILS::strcmpr(client_info, "main") || STRING_UTILS::strcmpr(client_info, "console")) {
 			Swtio::cput("\n" + ClientInfo::get_client_version() + "\n\n");
-		} else if (client_info.compare("release") == 0 || client_info.compare("build") == 0) {
+		} else if (STRING_UTILS::strcmpr(client_info, "release") || STRING_UTILS::strcmpr(client_info, "build")) {
 			Swtio::cput("\n" + ClientInfo::get_client_release() + "\n\n");
-		} else if (client_info.compare("default") == 0) {
+		} else if (STRING_UTILS::strcmpr(client_info, "default")) {
 			Swtio::cput("\n" + ClientInfo::get_client_info() + "\n\n");
 		}
 	}

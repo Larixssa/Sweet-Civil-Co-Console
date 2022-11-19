@@ -11,37 +11,31 @@ std::string HttpLink::DEFAULT_HTTP_PROTOCOL = "http://";
 std::string HttpLink::DEFAULT_WWW_PROTOCOL = "www.";
 
 /// <summary>
-/// Initialize a link with the HTTPS protocol.
+/// <para>Initialize a link with the a protocol.</para>
+/// <para>> HTTPS, HTTP, WWW.</para>
 /// </summary>
-std::string HttpLink::https_init_link(std::string url) {
-	std::string fhttpsurl;
-	if (!url.empty()) { fhttpsurl = HttpLink::DEFAULT_HTTPS_PROTOCOL + url; }
-	return fhttpsurl;
-}
-
-/// <summary>
-/// Initialize a link with the HTTP protocol.
-/// </summary>
-std::string HttpLink::http_init_link(std::string url) {
-	std::string fhttpurl;
-	if (!url.empty()) { fhttpurl = HttpLink::DEFAULT_HTTP_PROTOCOL + url; }
-	return fhttpurl;
-}
-
-/// <summary>
-/// Initialize a link with the WWW prefix.
-/// </summary>
-std::string HttpLink::www_init_link(std::string url) {
-	std::string fwwwurl;
-	if (!url.empty()) { fwwwurl = HttpLink::DEFAULT_WWW_PROTOCOL + url; }
-	return fwwwurl;
+std::string HttpLink::init_link(std::string url, std::string _protocol_)
+{
+	std::string furl;
+	std::string fprot;
+	if (!url.empty() && !_protocol_.empty())
+	{
+		if (STRING_UTILS::strcmpr(_protocol_, "https"))
+			{ fprot = HttpLink::DEFAULT_HTTPS_PROTOCOL; }
+		else if (STRING_UTILS::strcmpr(_protocol_, "http"))
+			{ fprot = HttpLink::DEFAULT_HTTP_PROTOCOL; }
+		else if (STRING_UTILS::strcmpr(_protocol_, "www"))
+			{ fprot = HttpLink::DEFAULT_WWW_PROTOCOL; }
+		furl = fprot + url;
+	}
+	return furl;
 }
 
 std::string HttpLink::get_link(std::string parse_url, std::string protocol) {
 	std::string full_url;
-	if (STRING_UTILS::strcmpr(protocol, "https")) { full_url = https_init_link(parse_url); }
-	else if (STRING_UTILS::strcmpr(protocol, "http")) { full_url = http_init_link(parse_url); }
-	else if (STRING_UTILS::strcmpr(protocol, "www")) { full_url = www_init_link(parse_url); }
+	if (!parse_url.empty() && !protocol.empty()) {
+		full_url = init_link(parse_url, protocol);
+	}
 	return full_url;
 }
 

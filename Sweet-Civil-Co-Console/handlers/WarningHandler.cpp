@@ -20,12 +20,12 @@ void WarningHandler::warning_handler(std::string whtype, std::string whval)
 
 void WarningHandler::throw_warning_incomplete_cmd(std::string vval) {
 	if (!vval.empty()) { Swtio::cput(
-		"\n[" + WarningHandler::DEFAULT_WARNING_MESSAGE + "]: Command > " + vval + " is incomplete."
-	); }
+		"\n[" + WarningHandler::DEFAULT_WARNING_MESSAGE + "]: Command > " + STRING_UTILS::quote_string(vval) + " is incomplete."
+	); } Swtio::cnl(); Swtio::cnl();
 }
 
 void WarningHandler::throw_warning_empty_prompt(std::string vval) {
 	if (!vval.empty()) { Swtio::cput(
-		"\n[" + WarningHandler::DEFAULT_WARNING_MESSAGE + "]: Prompt > " + vval + " is invalid or empty."
-	); }
+		"\n[" + WarningHandler::DEFAULT_WARNING_MESSAGE + "]: Prompt > " + STRING_UTILS::quote_string(vval) + " is invalid or empty."
+	); } Swtio::cnl(); Swtio::cnl();
 }
