@@ -29,3 +29,9 @@ void WarningHandler::throw_warning_empty_prompt(std::string vval) {
 		"\n[" + WarningHandler::DEFAULT_WARNING_MESSAGE + "]: Prompt > " + STRING_UTILS::quote_string(vval) + " is invalid or empty."
 	); } Swtio::cnl(); Swtio::cnl();
 }
+
+void WarningHandler::throw_warning_invalid_link(std::string lnkval) {
+	if (!lnkval.empty()) { Swtio::cput(
+		"\n[" + WarningHandler::DEFAULT_WARNING_MESSAGE + "] Link > " + STRING_UTILS::quote_string(lnkval) + " is invalid."
+	); }
+}

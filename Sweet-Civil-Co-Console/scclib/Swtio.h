@@ -7,8 +7,9 @@ class Swtio
 {
 public:
 	static void cput(std::string nstr);
-	static void cnl();
 	static void cputln(std::string nstr);
+	static void cnl();
+	static std::string gcnl();
 };
 
 #endif

@@ -11,6 +11,7 @@ public:
 	static void warning_handler(std::string whtype, std::string whval);
 	static void throw_warning_incomplete_cmd(std::string vval);
 	static void throw_warning_empty_prompt(std::string vval);
+	static void throw_warning_invalid_link(std::string lnkval);
 };
 
 #endif
