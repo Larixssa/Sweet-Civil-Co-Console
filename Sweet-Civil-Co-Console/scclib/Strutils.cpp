@@ -22,7 +22,16 @@ bool STRING_UTILS::cmpr(std::string a, std::string b)
 	return a.compare(b);
 }
 
+std::string STRING_UTILS::to_upper_string(std::string str)
+{
+	std::string new_str;
+	for (int i = 0; i < str.length(); i++) { new_str[i] = toupper(str[i]); }
+	return new_str;
+}
 
-std::string STRING_UTILS::itostr(int n) { return std::to_string(n); }
-std::string STRING_UTILS::ftostr(float n) { return std::to_string(n); }
-std::string STRING_UTILS::dtostr(double n) { return std::to_string(n); }
+std::string STRING_UTILS::to_lower_string(std::string str)
+{
+	std::string new_str;
+	for (int i = 0; i < str.length(); i++) { new_str[i] = tolower(str[i]); }
+	return new_str;
+}

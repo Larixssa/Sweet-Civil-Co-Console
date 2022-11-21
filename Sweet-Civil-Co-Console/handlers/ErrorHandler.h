@@ -11,6 +11,7 @@ public:
 	static void throw_handler(std::string thtype, std::string thval);
 	static void throw_empty_error(std::string kw);
 	static void throw_cmd_doesnt_exists(std::string cval);
+	static void throw_invalid_file_name(std::string fval);
 	static void throw_runtime_error(std::string vval);
 };
 

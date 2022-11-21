@@ -10,9 +10,8 @@ public:
 	static bool strcmpr(std::string sstr, std::string tstr);
 	static bool cmpr(std::string a, std::string b);
 	static std::string quote_string(std::string str);
-	static std::string itostr(int n);
-	static std::string ftostr(float n);
-	static std::string dtostr(double n);
+	static std::string to_upper_string(std::string str);
+	static std::string to_lower_string(std::string str);
 };
 
 #endif

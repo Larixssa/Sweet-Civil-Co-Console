@@ -152,6 +152,14 @@
       <TranslateIncludes Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</TranslateIncludes>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">CompileAsHeaderUnit</CompileAs>
     </ClCompile>
+    <ClCompile Include="command_utils\CommandHandler.cpp">
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ScanSourceForModuleDependencies>
+      <TranslateIncludes Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</TranslateIncludes>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ScanSourceForModuleDependencies>
+      <TranslateIncludes Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</TranslateIncludes>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">CompileAsHeaderUnit</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">CompileAsHeaderUnit</CompileAs>
+    </ClCompile>
     <ClCompile Include="display\ConsoleDisplayer.cpp">
       <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ScanSourceForModuleDependencies>
       <TranslateIncludes Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</TranslateIncludes>
@@ -184,6 +192,14 @@
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">CompileAsHeaderUnit</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">CompileAsHeaderUnit</CompileAs>
     </ClCompile>
+    <ClCompile Include="gui\CreateGui.cpp">
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ScanSourceForModuleDependencies>
+      <TranslateIncludes Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</TranslateIncludes>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ScanSourceForModuleDependencies>
+      <TranslateIncludes Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</TranslateIncludes>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">CompileAsHeaderUnit</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">CompileAsHeaderUnit</CompileAs>
+    </ClCompile>
     <ClCompile Include="gui\QurlGui.cpp">
       <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ScanSourceForModuleDependencies>
       <TranslateIncludes Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</TranslateIncludes>
@@ -209,6 +225,14 @@
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">CompileAsHeaderUnit</CompileAs>
     </ClCompile>
     <ClCompile Include="handlers\WarningHandler.cpp">
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ScanSourceForModuleDependencies>
+      <TranslateIncludes Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</TranslateIncludes>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ScanSourceForModuleDependencies>
+      <TranslateIncludes Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</TranslateIncludes>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">CompileAsHeaderUnit</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">CompileAsHeaderUnit</CompileAs>
+    </ClCompile>
+    <ClCompile Include="options\Option.cpp">
       <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ScanSourceForModuleDependencies>
       <TranslateIncludes Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</TranslateIncludes>
       <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ScanSourceForModuleDependencies>
@@ -252,6 +276,22 @@
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">CompileAsHeaderUnit</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">CompileAsHeaderUnit</CompileAs>
     </ClCompile>
+    <ClCompile Include="scclib\Convert.cpp">
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ScanSourceForModuleDependencies>
+      <TranslateIncludes Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</TranslateIncludes>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ScanSourceForModuleDependencies>
+      <TranslateIncludes Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</TranslateIncludes>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">CompileAsHeaderUnit</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">CompileAsHeaderUnit</CompileAs>
+    </ClCompile>
+    <ClCompile Include="scclib\File.cpp">
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ScanSourceForModuleDependencies>
+      <TranslateIncludes Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</TranslateIncludes>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ScanSourceForModuleDependencies>
+      <TranslateIncludes Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</TranslateIncludes>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">CompileAsHeaderUnit</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">CompileAsHeaderUnit</CompileAs>
+    </ClCompile>
     <ClCompile Include="scclib\HttpLink.cpp">
       <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ScanSourceForModuleDependencies>
       <TranslateIncludes Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</TranslateIncludes>
@@ -268,6 +308,7 @@
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">CompileAsHeaderUnit</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">CompileAsHeaderUnit</CompileAs>
     </ClCompile>
+    <ClCompile Include="scclib\Thread.cpp" />
     <ClCompile Include="SweetConsole.cpp" />
     <ClCompile Include="command_utils\Flag.cpp">
       <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ScanSourceForModuleDependencies>
@@ -278,6 +319,14 @@
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">CompileAsHeaderUnit</CompileAs>
     </ClCompile>
     <ClCompile Include="scclib\Swtio.cpp">
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ScanSourceForModuleDependencies>
+      <TranslateIncludes Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</TranslateIncludes>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ScanSourceForModuleDependencies>
+      <TranslateIncludes Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</TranslateIncludes>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">CompileAsHeaderUnit</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">CompileAsHeaderUnit</CompileAs>
+    </ClCompile>
+    <ClCompile Include="sys_utils\PlatformVars.cpp">
       <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ScanSourceForModuleDependencies>
       <TranslateIncludes Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</TranslateIncludes>
       <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ScanSourceForModuleDependencies>
@@ -306,13 +355,16 @@
   <ItemGroup>
     <ClInclude Include="client\ClientInfo.h" />
     <ClInclude Include="command_utils\Command.h" />
+    <ClInclude Include="command_utils\CommandHandler.h" />
     <ClInclude Include="display\ConsoleDisplayer.h" />
     <ClInclude Include="display\GuiGuide.h" />
     <ClInclude Include="display\GuiTitle.h" />
     <ClInclude Include="display\Prompt.h" />
+    <ClInclude Include="gui\CreateGui.h" />
     <ClInclude Include="gui\QurlGui.h" />
     <ClInclude Include="handlers\ErrorHandler.h" />
     <ClInclude Include="handlers\ProcessHandler.h" />
+    <ClInclude Include="options\Option.h" />
     <ClInclude Include="parser\CommandParser.h" />
     <ClInclude Include="display\LineBar.h" />
     <ClInclude Include="display\ClientTitle.h" />
@@ -320,9 +372,13 @@
     <ClInclude Include="command_utils\Flag.h" />
     <ClInclude Include="client\GitInfo.h" />
     <ClInclude Include="parser\ConsoleMessage.h" />
+    <ClInclude Include="scclib\Convert.h" />
+    <ClInclude Include="scclib\File.h" />
     <ClInclude Include="scclib\HttpLink.h" />
     <ClInclude Include="scclib\Strutils.h" />
     <ClInclude Include="scclib\Swtio.h" />
+    <ClInclude Include="scclib\Thread.h" />
+    <ClInclude Include="sys_utils\PlatformVars.h" />
     <ClInclude Include="sys_utils\SysExec.h" />
     <ClInclude Include="sys_utils\Platform.h" />
     <ClInclude Include="handlers\WarningHandler.h" />

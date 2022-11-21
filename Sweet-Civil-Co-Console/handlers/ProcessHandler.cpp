@@ -11,9 +11,9 @@ void ProcessHandler::init_process_handler(std::string proc_type)
 	if (!proc_type.empty())
 	{
 		if (STRING_UTILS::strcmpr(proc_type, "cancelledproc")) {
-			Swtio::cput(ProcessHandler::cancelled_process());
+			Swtio::cput(Swtio::gcnl() + ProcessHandler::cancelled_process());
 		} else if (STRING_UTILS::strcmpr(proc_type, "failedproc")) {
-			Swtio::cput(ProcessHandler::failed_process());
+			Swtio::cput(Swtio::gcnl() + ProcessHandler::failed_process());
 		}
 	}
 }

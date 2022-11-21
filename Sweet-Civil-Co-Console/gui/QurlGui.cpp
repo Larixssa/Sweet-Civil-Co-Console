@@ -1,6 +1,6 @@
 #include "QurlGui.h"
 #include "../scclib/Strutils.h"
-#include "../scclib/Swtio.h"	
+#include "../scclib/Swtio.h"
 #include "../scclib/HttpLink.h"
 #include "../display/GuiTitle.h"
 #include "../display/Prompt.h"
@@ -13,7 +13,9 @@
 
 void init_qurl_gui()
 {
-	std::string guide_array[] = {
+	const int default_array_size = 2;
+
+	std::string guide_array[default_array_size] = {
 		GuiGuide::create_guide("Input the URL in the prompt."),
 		GuiGuide::get_default_exit_guide()
 	};
@@ -25,7 +27,7 @@ void init_qurl_gui()
 
 	GuiTitle::display_gui_title();
 
-	GuiGuide::push_guide(guide_array, 2); Swtio::cnl();
+	GuiGuide::push_guide(guide_array, default_array_size); Swtio::cnl();
 
 	Prompt::create_input_prompt(); std::getline(std::cin, iurl);
 

@@ -1,6 +1,8 @@
+// DEFAULT INCLUDED HEADERS
 #include "CommandParser.h"
 #include "../command_utils/Command.h"
 #include "../command_utils/Flag.h"
+#include "../command_utils/CommandHandler.h"
 #include "../sys_utils/SysExec.h"
 #include "../init/Init.h"
 #include "../client/ClientInfo.h"
@@ -10,63 +12,56 @@
 #include "../scclib/HttpLink.h"
 #include "../handlers/ErrorHandler.h"
 
+// INCLUDED GUI HEADERS
 #include "../gui/QurlGui.h"
+#include "../gui/CreateGui.h"
 
 #include<string>
 
 void Command_Parser::command_help_list()
 {
-	const int default_arr_size = 6;
+	const int default_arr_size = 7;
 
 	std::string command_table[default_arr_size] = {
-		"help",
-		"exit",
+		"help", 
+		"clear",
 		"version",
 		"git",
 		"qurl",
-		"clear"
+		"create",
+		"exit",
 	};
 
 	std::string command_descriptions[default_arr_size] = {
 		"Show information and list for commands.",
-		"Exit the console.",
+		"Clear the screen."
 		"Get the version of the console.",
 		"Output the repository info and link.",
 		"Similar to the " + STRING_UTILS::quote_string("curl") + " Linux command",
-		"Clear the screen."
+		"Create a file or make a directory.",
+		"Exit the console.",
 	};
 
 	Swtio::cput("\n-- Command List --\n\n");
 
-	for (int i = 0; i < default_arr_size; i++) {
-		Swtio::cput(Command::create_command(command_table[i], command_descriptions[i]) + "\n");
-	}
+	CommandHandler::push_commands(command_table, command_descriptions, default_arr_size);
 
 	Swtio::cput("\n");
 }
 
 void Command_Parser::command_handler(std::string cmd_to_parse)
 {
-	const int default_cmd_table_size = 6;
+	const int default_cmd_table_size = 7;
 
 	std::string local_cmd_table[default_cmd_table_size] = {
 		"help", "clear", "version",
-		"git", "qurl", "exit"
+		"git", "qurl", "create",
+		"exit"
 	};
 
 	bool do_parse = false;
 
-	for (int i = 0; i < default_cmd_table_size; i++) {
-		if (STRING_UTILS::strcmpr(cmd_to_parse, local_cmd_table[i]) || STRING_UTILS::starts_with(cmd_to_parse, local_cmd_table[i])) {
-			do_parse = true;
-		}
-	}
-	
-	if (do_parse) {
-		Command_Parser::parse_command(cmd_to_parse);
-	} else {
-		ErrorHandler::throw_cmd_doesnt_exists(cmd_to_parse); INIT::init_client(false, false, false);
-	}
+	CommandHandler::handle_command(local_cmd_table, default_cmd_table_size, cmd_to_parse);
 }
 
 void Command_Parser::parse_command(std::string prs_cmd)
@@ -105,8 +100,12 @@ void Command_Parser::parse_command(std::string prs_cmd)
 			}
 		}
 
-		if (Command::check_command_starts_with(prs_cmd, "qurl")) {
+		if (Command::check_command(prs_cmd, "qurl")) {
 			QurlGui::create_qurl_gui();
+		}
+
+		if (Command::check_command_starts_with(prs_cmd, "create")) {
+			CreateGui::creategui_create();
 		}
 		
 		if (!Command::check_command(prs_cmd, "exit")) {
