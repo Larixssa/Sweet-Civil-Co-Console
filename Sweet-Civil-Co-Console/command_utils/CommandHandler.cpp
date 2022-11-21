@@ -17,7 +17,7 @@ void CommandHandler::push_commands(std::string commands_list[], std::string comm
 void CommandHandler::handle_command(std::string commands_list[], int cmdlist_size, std::string cmdio) {
 	bool __parse__ = false;
 	for (int i = 0; i < cmdlist_size; i++) {
-		if (STRING_UTILS::strcmpr(cmdio, commands_list[i])) {
+		if (STRING_UTILS::starts_with(cmdio, commands_list[i])) {
 			__parse__ = true;
 		}
 	}

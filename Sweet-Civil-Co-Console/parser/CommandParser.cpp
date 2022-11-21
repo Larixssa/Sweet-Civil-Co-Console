@@ -105,7 +105,11 @@ void Command_Parser::parse_command(std::string prs_cmd)
 		}
 
 		if (Command::check_command_starts_with(prs_cmd, "create")) {
-			CreateGui::creategui_create();
+			if (Flag::check_flag(prs_cmd, "/file")) {
+				CreateGui::creategui_createfile(false);
+			} else if (Flag::check_flag(prs_cmd, "/dir")) {
+				CreateGui::creategui_makedirectory(false);
+			} else { CreateGui::creategui_create(); }
 		}
 		
 		if (!Command::check_command(prs_cmd, "exit")) {
