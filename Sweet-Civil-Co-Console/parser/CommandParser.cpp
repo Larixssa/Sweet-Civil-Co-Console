@@ -29,17 +29,17 @@ void Command_Parser::command_help_list()
 		"git",
 		"qurl",
 		"create",
-		"exit",
+		"exit"
 	};
 
 	std::string command_descriptions[default_arr_size] = {
 		"Show information and list for commands.",
-		"Clear the screen."
+		"Clear the screen.",
 		"Get the version of the console.",
 		"Output the repository info and link.",
 		"Similar to the " + STRING_UTILS::quote_string("curl") + " Linux command",
 		"Create a file or make a directory.",
-		"Exit the console.",
+		"Exit the console."
 	};
 
 	Swtio::cput("\n-- Command List --\n\n");

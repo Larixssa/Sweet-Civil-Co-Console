@@ -3,16 +3,17 @@
 
 #include<string>
 
+std::string Command::DEFAULT_COMMAND_NAME = "COMMAND";
+std::string Command::DEFAULT_COMMAND_DESCRIPTION = "COMMAND_DESCRIPTION";
+
 std::string Command::create_command(std::string name, std::string description)
 {
 	std::string full_string;
-	std::string DEFAULT_VALUE_NAME = "COMMAND_NAME";
-	std::string DEFAULT_DESCRIPTION_VALUE = "COMMAND_DESCRIPTION_DATA";
 
 	if (!name.empty() && !description.empty())
 		{ full_string = "[" + name + "]" + " - " + description; }
 	else 
-		{ full_string = "[" + DEFAULT_VALUE_NAME + "]" + ": <" + DEFAULT_DESCRIPTION_VALUE + ">"; }
+		{ full_string = "[" + Command::DEFAULT_COMMAND_NAME + "]" + ": <" + Command::DEFAULT_COMMAND_DESCRIPTION + ">"; }
 
 	return full_string;
 }

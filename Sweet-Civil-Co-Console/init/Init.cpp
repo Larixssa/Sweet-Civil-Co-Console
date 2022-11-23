@@ -12,6 +12,10 @@
 #include<sstream>
 #include<string>
 
+bool INIT::SHOW_TITLE = true;
+bool INIT::CLEAR_SCREEN = true;
+bool INIT::LOAD = true;
+
 void INIT::init_client(bool show_title, bool clear_screen, bool do_load)
 {
 
